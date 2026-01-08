@@ -4,7 +4,6 @@ metadata:
   name: playground
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: playground
@@ -15,7 +14,8 @@ spec:
     spec:
       containers:
         - image: wil42/playground:v1
-          name: playground
+          name: 
+          command: ["/bin/sh", "-c", "tail -f /dev/null"]
           ports:
             - containerPort: 8888
 
